@@ -24,7 +24,7 @@ PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/ramdisk/init:root/init \
         $(LOCAL_PATH)/ramdisk/icon_ftm.png:root/icon_ftm.png \
         $(LOCAL_PATH)/ramdisk/init.2ndstg.rc:root/init.2ndstg.rc \
-        $(LOCAL_PATH)/ramdisk/init.elden.rc:root/init.elden.rc \
+        $(LOCAL_PATH)/ramdisk/init.rc:root/init.rc \
         $(LOCAL_PATH)/ramdisk/init.ftm.rc:root/init.ftm.rc \
         $(LOCAL_PATH)/ramdisk/init.qcom.class_core.sh:root/init.qcom.class_core.sh \
         $(LOCAL_PATH)/ramdisk/init.qcom.class_main.sh:root/init.qcom.class_main.sh \
