@@ -21,11 +21,7 @@ PRODUCT_COPY_FILES += \
 
 ## Ramdisk
 PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/ramdisk/init:root/init \
         $(LOCAL_PATH)/ramdisk/icon_ftm.png:root/icon_ftm.png \
-        $(LOCAL_PATH)/ramdisk/init.2ndstg.rc:root/init.2ndstg.rc \
-        $(LOCAL_PATH)/ramdisk/init.rc:root/init.rc \
-        $(LOCAL_PATH)/ramdisk/init.ftm.rc:root/init.ftm.rc \
         $(LOCAL_PATH)/ramdisk/init.qcom.class_core.sh:root/init.qcom.class_core.sh \
         $(LOCAL_PATH)/ramdisk/init.qcom.class_main.sh:root/init.qcom.class_main.sh \
         $(LOCAL_PATH)/ramdisk/init.qcom.rc:root/init.qcom.rc \
@@ -33,10 +29,8 @@ PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
         $(LOCAL_PATH)/ramdisk/init.qcom.usb.sh:root/init.qcom.usb.sh \
         $(LOCAL_PATH)/ramdisk/init.target.rc:root/init.target.rc \
-        $(LOCAL_PATH)/ramdisk/ueventd.rc:root/ueventd.rc \
+        $(LOCAL_PATH)/ramdisk/ueventd.rc:root/ueventd.qcom.rc \
         $(LOCAL_PATH)/ramdisk/logo.bmp:root/logo.bmp \
-        $(LOCAL_PATH)/ramdisk/sbin/ueventd:root/sbin/ueventd \
-        $(LOCAL_PATH)/ramdisk/sbin/usbconfig:root/sbin/usbconfig
 
 $(call inherit-product, build/target/product/full.mk)
 
