@@ -103,7 +103,7 @@ lib/libcameraservice.so
 lib/libcamera_client.so
 lib/liboemcamera.so
 
-#Graphics/Display
+# Graphics/Display
 etc/firmware/cyttsp_8960_cdp.hex
 etc/firmware/Ver11_20120409_N880E_ID0x55_app.bin
 etc/firmware/vidc.b00
@@ -176,22 +176,6 @@ etc/voicemail-conf.xml
 etc/wiperconfig.xml
 
 etc/qcom/softap/hostapd_default.conf
-
-# Framework
-etc/permissions/cneapiclient.xml
-etc/permissions/com.qualcomm.location.quipslib.xml
-etc/permissions/com.qualcomm.location.vzw_library.xml
-etc/permissions/qcnvitems.xml
-etc/permissions/qcrilhook.xml
-etc/permissions/ZteDrmClient.xml
-
-framework/cneapiclient.jar
-framework/com.qualcomm.location.vzw_library.jar
-framework/com.quicinc.cne.jar
-framework/modemwarmup.jar
-framework/qcnvitems.jar
-framework/qcrilhook.jar
-framework/ZteDrmClient.jar
 
 # Vendor
 vendor/firmware/libpn544_fw.so
