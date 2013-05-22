@@ -30,7 +30,7 @@ PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/ramdisk/init.qcom.usb.sh:root/init.qcom.usb.sh \
         $(LOCAL_PATH)/ramdisk/init.target.rc:root/init.target.rc \
         $(LOCAL_PATH)/ramdisk/ueventd.rc:root/ueventd.qcom.rc \
-        $(LOCAL_PATH)/ramdisk/logo.bmp:root/logo.bmp \
+        $(LOCAL_PATH)/ramdisk/logo.bmp:root/logo.bmp
 
 $(call inherit-product, build/target/product/full.mk)
 
@@ -54,7 +54,7 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
 	frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
 	frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
-	frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
+	frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -93,7 +93,7 @@ PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/prebuilt/lib/libOpenCL.so:system/lib/libOpenCL.so \
         $(LOCAL_PATH)/prebuilt/lib/libOpenVG.so:system/lib/libOpenVG.so \
         $(LOCAL_PATH)/prebuilt/lib/libsc-a2xx.so:system/lib/libsc-a2xx.so \
-        $(LOCAL_PATH)/prebuilt/lib/libsc-a3xx.so:system/lib/libsc-a3xx.so \
+        $(LOCAL_PATH)/prebuilt/lib/libsc-a3xx.so:system/lib/libsc-a3xx.so
 
 
 # EGL
@@ -103,7 +103,7 @@ PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/prebuilt/lib/egl/libEGL_adreno200.so:system/lib/egl/libEGL_adreno200.so \
         $(LOCAL_PATH)/prebuilt/lib/egl/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \
         $(LOCAL_PATH)/prebuilt/lib/egl/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \
-        $(LOCAL_PATH)/prebuilt/lib/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so \
+        $(LOCAL_PATH)/prebuilt/lib/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so
 
 #GPS
 PRODUCT_PACKAGES += \
