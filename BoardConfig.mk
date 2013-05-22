@@ -41,7 +41,7 @@ COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DLGE_MSM8960
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 loglevel=7 kgsl.mmutype=gpummu
 BOARD_KERNEL_BASE := 0x80200000
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x81500000
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01300000
 BOARD_KERNEL_PAGESIZE := 2048
 
 
