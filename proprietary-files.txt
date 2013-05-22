@@ -150,15 +150,11 @@ lib/libril-qcril-hook-oem.so
 etc/vold.fstab
 
 # Wifi
-etc/wifi/wpa_supplicant.conf
-etc/wifi/p2p_supplicant.conf
 etc/init.qcom.coex.sh
 etc/init.wlanprop.sh
 etc/init.qcom.wifi.sh
 etc/init.qcom.sdio.sh
-etc/firmware/wlan/prima/WCNSS_cfg.dat
-etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini
-etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+etc/qcom/softap/hostapd_default.conf
 
 ##
 etc/init.qcom.fm.sh
@@ -167,15 +163,6 @@ etc/init.qcom.post_boot_ftm.sh
 etc/init.sysctl.sh
 
 etc/media_profiles.xml
-
-etc/nv-conf.xml
-etc/OperatorPolicy.xml
-etc/thermald.conf
-etc/UserPolicy.xml
-etc/voicemail-conf.xml
-etc/wiperconfig.xml
-
-etc/qcom/softap/hostapd_default.conf
 
 # Vendor
 vendor/firmware/libpn544_fw.so
