@@ -78,7 +78,7 @@ PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/prebuilt/etc/wifi/wpa_supplicant.conf:/system/etc/wifi/wpa_supplicant.conf \
         $(LOCAL_PATH)/prebuilt/lib/modules/wlan.ko:system/lib/modules/wlan.ko
 
-# Media Firmware
+# Graphics
 PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/prebuilt/bin/gpu_dcvsd:system/bin/gpu_dcvsd \
         $(LOCAL_PATH)/prebuilt/etc/firmware/a225p5_pm4.fw:system/etc/firmware/a225p5_pm4.fw \
@@ -112,6 +112,26 @@ PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/prebuilt/lib/egl/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \
         $(LOCAL_PATH)/prebuilt/lib/egl/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \
         $(LOCAL_PATH)/prebuilt/lib/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so
+
+
+# Qualcomm scripts
+PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/prebuilt/etc/init.qcom.bt.sh:/system/etc/init.qcom.bt.sh \
+        $(LOCAL_PATH)/prebuilt/etc/init.qcom.coex.sh:/system/etc/init.qcom.coex.sh \
+        $(LOCAL_PATH)/prebuilt/etc/init.qcom.fm.sh:/system/etc/init.qcom.fm.sh \
+        $(LOCAL_PATH)/prebuilt/etc/init.qcom.modem_links.sh:/system/etc/init.qcom.modem_links.sh \
+        $(LOCAL_PATH)/prebuilt/etc/init.qcom.post_boot.sh:/system/etc/init.qcom.post_boot.sh \
+        $(LOCAL_PATH)/prebuilt/etc/init.qcom.post_boot_ftm.sh:/system/etc/init.qcom.post_boot_ftm.sh \
+        $(LOCAL_PATH)/prebuilt/etc/init.qcom.sdio.sh:/system/etc/init.qcom.sdio.sh \
+        $(LOCAL_PATH)/prebuilt/etc/init.qcom.wifi.sh:/system/etc/init.qcom.wifi.sh
+
+# Vold
+PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/prebuilt/etc/vold.fstab:system/etc/vold.fstab
+
+# APN
+PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/prebuilt/etc/apns-conf.xml:/system/etc/apns-conf.xml
 
 #GPS
 PRODUCT_PACKAGES += \

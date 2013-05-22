@@ -57,9 +57,6 @@ bin/wpa_cli
 bin/wpa_supplicant
 bin/zte_charger
 
-# APN
-etc/apns-conf.xml
-
 # Audio
 etc/audio_effects.conf
 
@@ -146,9 +143,6 @@ lib/libril.so
 lib/libril-qc-qmi-1.so
 lib/libril-qcril-hook-oem.so
 
-# SDCard
-etc/vold.fstab
-
 # Wifi
 etc/init.qcom.coex.sh
 etc/init.wlanprop.sh
@@ -156,7 +150,7 @@ etc/init.qcom.wifi.sh
 etc/init.qcom.sdio.sh
 etc/qcom/softap/hostapd_default.conf
 
-##
+# QCOM scripts
 etc/init.qcom.fm.sh
 etc/init.qcom.modem_links.sh
 etc/init.qcom.post_boot_ftm.sh
