@@ -70,6 +70,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
         camera.msm8960
 
+# WIFI
+PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/prebuilt/etc/firmware/wlan/prima/WCNSS_cfg.dat:/system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+        $(LOCAL_PATH)/prebuilt/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini:/system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
+        $(LOCAL_PATH)/prebuilt/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin:/system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
+        $(LOCAL_PATH)/prebuilt/etc/wifi/wpa_supplicant.conf:/system/etc/wifi/wpa_supplicant.conf \
+        $(LOCAL_PATH)/prebuilt/lib/modules/wlan.ko:system/lib/modules/wlan.ko
+
 # Media Firmware
 PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/prebuilt/bin/gpu_dcvsd:system/bin/gpu_dcvsd \
@@ -124,6 +132,7 @@ PRODUCT_PACKAGES += \
         liboverlay \
 	libI420colorconvert \
         libc2dcolorconvert \
+        libtilerenderer \
         libQcomUI
 
 # Filesystem management tools
