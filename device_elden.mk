@@ -70,7 +70,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
         camera.msm8960
 
-# Display Firmware
+# Media Firmware
 PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/prebuilt/bin/gpu_dcvsd:system/bin/gpu_dcvsd \
         $(LOCAL_PATH)/prebuilt/etc/firmware/a225p5_pm4.fw:system/etc/firmware/a225p5_pm4.fw \
@@ -82,13 +82,6 @@ PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/prebuilt/etc/firmware/leia_pm4_470.fw:system/etc/firmware/leia_pm4_470.fw \
         $(LOCAL_PATH)/prebuilt/etc/firmware/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
         $(LOCAL_PATH)/prebuilt/etc/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw \
-        $(LOCAL_PATH)/prebuilt/lib/egl/egl.cfg:system/lib/egl/egl.cfg \
-        $(LOCAL_PATH)/prebuilt/lib/egl/eglsubAndroid.so:system/lib/egl/eglsubAndroid.so \
-        $(LOCAL_PATH)/prebuilt/lib/egl/libEGL_adreno.so:system/lib/egl/libEGL_adreno.so \
-        $(LOCAL_PATH)/prebuilt/lib/egl/libGLESv1_CM_adreno.so:system/lib/egl/libGLESv1_CM_adreno.so \
-        $(LOCAL_PATH)/prebuilt/lib/egl/libGLESv2_adreno.so:system/lib/egl/libGLESv2_adreno.so \
-        $(LOCAL_PATH)/prebuilt/lib/egl/libplayback_adreno.so:system/lib/egl/libplayback_adreno.so \
-        $(LOCAL_PATH)/prebuilt/lib/egl/libq3dtools_adreno.so:system/lib/egl/libq3dtools_adreno.so \
         $(LOCAL_PATH)/prebuilt/lib/libadreno_utils.so:system/lib/libadreno_utils.so \
         $(LOCAL_PATH)/prebuilt/lib/libc2d2_a3xx.so:system/lib/libc2d2_a3xx.so \
         $(LOCAL_PATH)/prebuilt/lib/libc2d2_z180.so:system/lib/libc2d2_z180.so \
@@ -101,6 +94,16 @@ PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/prebuilt/lib/libOpenVG.so:system/lib/libOpenVG.so \
         $(LOCAL_PATH)/prebuilt/lib/libsc-a2xx.so:system/lib/libsc-a2xx.so \
         $(LOCAL_PATH)/prebuilt/lib/libsc-a3xx.so:system/lib/libsc-a3xx.so \
+
+
+# EGL
+PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/prebuilt/lib/egl/egl.cfg:system/lib/egl/egl.cfg \
+        $(LOCAL_PATH)/prebuilt/lib/egl/eglsubAndroid.so:system/lib/egl/eglsubAndroid.so \
+        $(LOCAL_PATH)/prebuilt/lib/egl/libEGL_adreno200.so:system/lib/egl/libEGL_adreno200.so \
+        $(LOCAL_PATH)/prebuilt/lib/egl/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \
+        $(LOCAL_PATH)/prebuilt/lib/egl/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \
+        $(LOCAL_PATH)/prebuilt/lib/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so \
 
 #GPS
 PRODUCT_PACKAGES += \
