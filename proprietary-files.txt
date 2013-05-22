@@ -89,11 +89,6 @@ etc/snd_soc_msm/snd_soc_msm_2x
 # Bluetooth
 bin/hci_qcomm_init
 etc/bluetooth/main.conf
-etc/init.qcom.post_boot.sh
-etc/init.qcom.bt.sh
-lib/libbluedroid.so
-lib/libbluetooth.so
-lib/libbluetoothd.so
 
 # Camera
 lib/libcameraservice.so
@@ -144,18 +139,9 @@ lib/libril-qc-qmi-1.so
 lib/libril-qcril-hook-oem.so
 
 # Wifi
-etc/init.qcom.coex.sh
-etc/init.wlanprop.sh
-etc/init.qcom.wifi.sh
-etc/init.qcom.sdio.sh
 etc/qcom/softap/hostapd_default.conf
 
-# QCOM scripts
-etc/init.qcom.fm.sh
-etc/init.qcom.modem_links.sh
-etc/init.qcom.post_boot_ftm.sh
-etc/init.sysctl.sh
-
+# Media
 etc/media_profiles.xml
 
 # Vendor
