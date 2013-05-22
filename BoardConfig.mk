@@ -1,19 +1,72 @@
-USE_CAMERA_STUB := true
+
+# Copyright (C) 2009 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#
+# This file sets variables that control the way modules are built
+# thorughout the system. It should not be used to conditionally
+# disable makefiles (the proper mechanism to control what gets
+# included in a build is to use PRODUCT_PACKAGES in a product
+# definition file).
+#
+
+# WARNING: This line must come *before* including the proprietary
+# variant, so that it gets overwritten by the parent (which goes
+# against the traditional rules of inheritance).
+
+#USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
 -include vendor/zte/elden/BoardConfigVendor.mk
 
-# General
-TARGET_BOOTLOADER_BOARD_NAME := elden
-TARGET_ARCH := arm
+# Flags
+TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
+COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DLGE_MSM8960
+
+# Includes
+#TARGET_SPECIFIC_HEADER_PATH += device/zte/elden/include
+
+# Kernel
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 loglevel=7 kgsl.mmutype=gpummu
+BOARD_KERNEL_BASE := 0x80200000
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x81500000
+BOARD_KERNEL_PAGESIZE := 2048
+
+
+TARGET_PREBUILT_KERNEL := device/zte/elden/kernel
+LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_KERNEL):kernel \
+
+# Platform
 TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM := msm8960
 TARGET_BOARD_PLATFORM_FPU := neon
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
+
+# Architecture
+TARGET_BOOTLOADER_BOARD_NAME := elden
+TARGET_ARCH := arm
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
 TARGET_ARCH_VARIANT := armv7-a-neon
+ARCH_ARM_HAVE_TLS_REGISTER := true
 
+# Krait optimizations
 TARGET_USE_KRAIT_BIONIC_OPTIMIZATION := true
 TARGET_USE_KRAIT_PLD_SET := true
 TARGET_KRAIT_BIONIC_PLDOFFS := 10
@@ -21,37 +74,14 @@ TARGET_KRAIT_BIONIC_PLDTHRESH := 10
 TARGET_KRAIT_BIONIC_BBTHRESH := 64
 TARGET_KRAIT_BIONIC_PLDSIZE := 64
 
-ARCH_ARM_HAVE_TLS_REGISTER := true
-ARCH_ARM_HAVE_NEON := true
-ARCH_ARM_HAVE_ARMV7A := true
-
-BOARD_USES_ADRENO_200 := true
-BOARD_USES_HWCOMPOSER := true
-BOARD_USES_GENLOCK := true
+# PMEM
 BOARD_NEEDS_MEMORYHEAPPMEM := true
-BOARD_CDMA_NETWORK := true
 
-TARGET_NO_HW_VSYNC := true
-TARGET_USES_SF_BYPASS := true
-TARGET_USES_OVERLAY := true
-TARGET_FORCE_CPU_UPLOAD := true
+#TARGET_USES_SF_BYPASS := true
+#TARGET_USES_OVERLAY := true
 
+# QCOM
 BOARD_USES_QCOM_HARDWARE := true
-QCOM_TARGET_PRODUCT := msm8960
-BOARD_USE_QCOM_PMEM := true
-TARGET_USES_QCOM_LPA := true
-BOARD_USES_QCOM_LIBS := true
-BOARD_USES_QCOM_LIBRPC := true
-
-# Flags
-TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp -march=armv7-a
-TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp -march=armv7-a
-
-COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DWITH_QCOM_LPA
-COMMON_GLOBAL_CFLAGS += -DQCOM_NO_SECURE_PLAYBACK -DQCOM_ROTATOR_KERNEL_FORMATS
-COMMON_GLOBAL_CFLAGS += -DQCOM_ICS_COMPAT -DQCOM_ACDB_ENABLED
-COMMON_GLOBAL_CFLAGS += -DUSE_QMI -DFORCE_CPU_UPLOAD -DBINDER_COMPAT
-COMMON_GLOBAL_CFLAGS += -DZTE_MSM8960 -DNEED_UMS_ENABLE -DENABLE_UMS_WITH_DATAMEDIA
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
@@ -63,23 +93,21 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 
 # Display/Video
-BOARD_EGL_CFG := device/zte/elden/prebuilts/lib/egl/egl.cfg
-#BOARD_ADRENO_DECIDE_TEXTURE_TARGET := true
-BOARD_USE_SKIA_LCDTEXT := true
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno225
+COMMON_GLOBAL_CFLAGS += -DQCOM_NO_SECURE_PLAYBACK -DQCOM_ROTATOR_KERNEL_FORMATS
+TARGET_NO_HW_VSYNC := true
 TARGET_QCOM_HDMI_OUT := true
-TARGET_HARDWARE_3D := true
 USE_OPENGL_RENDERER := true
 TARGET_USES_ION := true
 TARGET_USES_C2D_COMPOSITION := true
+BOARD_EGL_CFG := device/zte/elden/prebuilts/lib/egl/egl.cfg
 
 # FM Radio
 #BOARD_HAVE_FM_RADIO := true
 #BOARD_GLOBAL_CFAGS += -DHAVE_FM_RADIO
 
 # GPS
-BOARD_USES_QCOM_GPS := true
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
+#BOARD_USES_QCOM_GPS := true
+#BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -90,26 +118,26 @@ JS_ENGINE := v8
 
 # Webkit
 ENABLE_WEBGL := true
+TARGET_FORCE_CPU_UPLOAD := true
 
 # Wifi
-
-# Kernel
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 loglevel=7 kgsl.mmutype=gpummu
-BOARD_KERNEL_BASE := 0x80200000
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01300000
-BOARD_KERNEL_PAGESIZE := 2048
-
-TARGET_PREBUILT_KERNEL := device/zte/elden/kernel
+BOARD_HAS_QCOM_WLAN := true
+BOARD_WLAN_DEVICE := qcwcn
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+WIFI_DRIVER_FW_PATH_AP := "ap"
+WIFI_DRIVER_FW_PATH_STA := "sta"
+WIFI_DRIVER_MODULE_NAME := wlan
+WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/wlan.ko"
+WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.4.3
-
 #TARGET_KERNEL_CONFIG := msm8960-elden_defconfig
-
-#TARGET_SPECIFIC_HEADER_PATH += device/zte/elden/include
-
 TARGET_PROVIDES_INIT_RC := true
 
-# Parttions
+# Filesystem
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 480018432
