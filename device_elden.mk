@@ -29,7 +29,7 @@ PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
         $(LOCAL_PATH)/ramdisk/init.qcom.usb.sh:root/init.qcom.usb.sh \
         $(LOCAL_PATH)/ramdisk/init.target.rc:root/init.target.rc \
-        $(LOCAL_PATH)/ramdisk/ueventd.rc:root/ueventd.qcom.rc \
+        $(LOCAL_PATH)/ramdisk/ueventd.qcom.rc:root/ueventd.qcom.rc \
         $(LOCAL_PATH)/ramdisk/logo.bmp:root/logo.bmp
 
 $(call inherit-product, build/target/product/full.mk)
