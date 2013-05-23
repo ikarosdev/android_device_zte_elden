@@ -99,7 +99,7 @@ TARGET_QCOM_HDMI_OUT := true
 USE_OPENGL_RENDERER := true
 TARGET_USES_ION := true
 TARGET_USES_C2D_COMPOSITION := true
-BOARD_EGL_CFG := device/zte/elden/prebuilts/lib/egl/egl.cfg
+BOARD_EGL_CFG := device/zte/elden/prebuilt/lib/egl/egl.cfg
 
 # FM Radio
 #BOARD_HAVE_FM_RADIO := true
